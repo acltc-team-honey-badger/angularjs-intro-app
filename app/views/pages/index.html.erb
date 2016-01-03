@@ -1,0 +1,15 @@
+<div ng-app="app">
+  <div ng-controller="exampleCtrl">
+    <ul>
+      <li ng-repeat="review in reviews"> {{review}} </li>
+    </ul>
+    <div>Add Review:
+    <input ng-model="newReview"> 
+    </div>
+    <button ng-click="addReview(newReview)">Add Review</button>
+
+
+
+
+  </div>
+</div>
