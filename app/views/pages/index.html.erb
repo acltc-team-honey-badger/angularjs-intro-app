@@ -1,12 +1,23 @@
 <div ng-app="app">
   <div ng-controller="exampleCtrl">
-    <ul>
-      <li ng-repeat="review in reviews"> {{review}} </li>
-    </ul>
-    <div>Add Review:
-    <input ng-model="newReview"> 
+    <div>
+      <div ng-repeat="review in reviews track by $index"> 
+       <p ng-click="completeReview($index)" ng-if="ifPositive(review)">Text: {{review.text}} </p>
+       <p>Rating: {{review.rating}} </p>
+      </div>
     </div>
-    <button ng-click="addReview(newReview)">Add Review</button>
+    <div>Add Review:
+      <div>
+        Text: <input ng-model="review.text"> 
+      </div>
+      <div>
+        Rating: <input ng-model="review.rating"> 
+      </div>
+      <div>
+        Reviewer: <input ng-model="review.reviewer"> 
+      </div>
+    </div>
+    <button ng-click="addReview(review)">Add Review</button>
 
 
 
